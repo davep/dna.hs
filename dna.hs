@@ -34,6 +34,7 @@ compBase 'd' = 'h'
 compBase 'h' = 'd'
 compBase 'N' = 'N'
 compBase 'n' = 'n'
+compBase _ = error "Unknown base code"
 
 -- Complement a sequence.
 compSeq :: [Char] -> [Char]
