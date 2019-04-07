@@ -5,9 +5,13 @@ revSeq (x:xs) = revSeq xs ++ [x]
 
 -- Complement a base.
 compBase 'A' = 'T'
+compBase 'a' = 't'
 compBase 'T' = 'A'
+compBase 't' = 'a'
 compBase 'C' = 'G'
+compBase 'c' = 'g'
 compBase 'G' = 'C'
+compBase 'g' = 'c'
 
 -- Complement a sequence.
 compSeq :: [Char] -> [Char]
