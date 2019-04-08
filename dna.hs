@@ -1,9 +1,14 @@
+-- Types.
+type Base = Char
+type Sequence = [Base]
+
 -- Reverse a sequence.
-revSeq :: [Char] -> [Char]
+revSeq :: Sequence -> Sequence
 revSeq [] = []
 revSeq (x:xs) = revSeq xs ++ [x]
 
 -- Complement a base.
+compBase :: Base -> Base
 compBase 'A' = 'T'
 compBase 'a' = 't'
 compBase 'T' = 'A'
@@ -37,12 +42,12 @@ compBase 'n' = 'n'
 compBase _ = error "Unknown base code"
 
 -- Complement a sequence.
-compSeq :: [Char] -> [Char]
+compSeq :: Sequence -> Sequence
 compSeq [] = []
 compSeq (x:xs) = [compBase x] ++ (compSeq xs)
 
 -- Reverse complement a sequence.
-revCompSeq :: [Char] -> [Char]
+revCompSeq :: Sequence -> Sequence
 revCompSeq [] = []
 revCompSeq s = revSeq (compSeq s)
 
